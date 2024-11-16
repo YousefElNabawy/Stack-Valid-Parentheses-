@@ -1,0 +1,33 @@
+To solve this problem, we can use a stack data structure. The stack helps keep track of the open brackets encountered so far and ensures they are closed in the correct order.
+
+Here's the approach:
+
+1.Traverse the string s character by character.
+2.For each open bracket (, {, or [, push it onto the stack.
+3.For each closing bracket ), }, or ], check if the stack is not empty and the top of the stack has the corresponding opening bracket:
+    .If it matches, pop the top of the stack.
+    .If it doesn't match or the stack is empty, return false (indicating the string is invalid).
+4.After processing all characters, if the stack is empty, return true (all brackets were matched correctly). Otherwise, return false.
+
+
+
+Explanation
+.We use stack.push(c) to add each open bracket to the stack.
+.For each closing bracket, we check if the stack's top matches the corresponding open bracket:
+    If it matches, we pop the top element from the stack.
+    If it doesn’t match or the stack is empty (indicating no matching opening bracket), we return false.
+.At the end, if the stack is empty, all brackets were matched correctly, so we return true; otherwise, we return false.
+
+
+Complexity Analysis
+
+Time Complexity: 
+𝑂(𝑛), where 𝑛 is the length of the string s, since we process each character once.
+
+Space Complexity: 
+𝑂(𝑛), in the worst case, for the stack (if all characters are open brackets).
+
+
+
+
+
