@@ -1,3 +1,11 @@
+Explanation
+.We use stack.push(c) to add each open bracket to the stack.
+.For each closing bracket, we check if the stack's top matches the corresponding open bracket:
+    If it matches, we pop the top element from the stack.
+    If it doesn’t match or the stack is empty (indicating no matching opening bracket), we return false.
+.At the end, if the stack is empty, all brackets were matched correctly, so we return true; otherwise, we return false.
+
+
 bool isValid(char* s) {
     int n = strlen(s);
     if (n % 2 != 0) return false;  // If the length is odd, it can't be valid
